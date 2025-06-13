@@ -697,15 +697,14 @@ local WeaponIds = {}
 local RenderSteppedFunctions = {}
 local RenderSteppedDelayedFunctions = {}
 
-local Nevermore = require(ReplicatedStorage.Framework.Nevermore)
-local _lookupTable = rawget(Nevermore, "_lookupTable")
-
 setthreadidentity(2)
-for i,v in _lookupTable do
-    if i:sub(1,1) == "@" then
-        i = i:sub(2,i:len())
-    end
-    Modules.Name[i] = require(v)
+for _, child in pairs(ReplicatedStorage:GetDescendants()) do
+	if child:IsA("ModuleScript") then
+		local success, module = pcall(require, child)
+		if success then
+			Modules.Name[child.Name] = module
+		end
+	end
 end
 setthreadidentity(8)
 
