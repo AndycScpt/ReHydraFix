@@ -139,20 +139,7 @@ if not Data then
     }
 end
 
-local Changelogs = [[!!NOTICE!!
-Our script doesn't have a key BTW!
-Also join our discord at .gg/SCFH9cDYWV pls!
-%NEWBULLET%
-New things:
-Godmode
-Anti-head
-Morphs
-%NEWBULLET%
-Fixes:
-Ragebot fixed
-%NEWBULLET%
-Minor things:
-Optimized]]
+local Changelogs = [[Unpatched by Andyc]]
 
 game:GetService("ScriptContext"):SetTimeout(5)
 
